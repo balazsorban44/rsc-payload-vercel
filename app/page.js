@@ -1,5 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
-  return <Link href="/hello-world">Hello world</Link>;
+export default function Home({ searchParams }) {
+  const path = searchParams.path ?? "/hello-world";
+  return <Link href={path}>{path}</Link>;
 }
